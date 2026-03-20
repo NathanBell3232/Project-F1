@@ -1,5 +1,5 @@
-import Base
-import Palette
+from Base import Base
+from Palette import Palette
 from Players import HumanPlayer, AIPlayer
 
 import math
@@ -194,8 +194,9 @@ class Game(Base):
                                 if (numFalse <= 1):
                                     car.setCheckpoints(tempIndex)
 
-            '''self.window.fill((73,164,52))
-            self.window.blit(self.__track, (0,0))'''
+            # draw the track to remove checkpoint lines
+            self.window.fill((73,164,52))
+            self.window.blit(self.__track, (0,0))
             for index, car in enumerate(self.__carsList):
                 carLapCount = car.getLapCount()
                 if car.checkEndLap():
@@ -221,6 +222,7 @@ class Game(Base):
                     self._running = False
                 
                 car.draw()
+                # draw the lines used for AI (currently unused)
                 '''for coeff in range(-4, 5):
                     coeff *= 0.125
                     tuple = car.lines(coeff)

@@ -1,4 +1,4 @@
-import Base
+from Base import Base
 
 import pygame
 import random

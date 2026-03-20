@@ -1,4 +1,4 @@
-import Track
+from Track import Track
 
 class TrackFinishLine(Track):
     def __init__(self, path : str):

@@ -5,3 +5,5 @@ mouse.png
 cat.png
 cheese.png
 colours.py
+*pyc
+__pycache__/

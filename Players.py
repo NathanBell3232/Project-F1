@@ -1,4 +1,4 @@
-import Car
+from Car import Car
 
 import pygame
 import math

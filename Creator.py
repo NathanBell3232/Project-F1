@@ -1,6 +1,6 @@
-import Base
-import Track
-import TrackFinishLine
+from Base import Base
+from Track import Track
+from TrackFinishLine import TrackFinishLine
 
 import pygame
 import time

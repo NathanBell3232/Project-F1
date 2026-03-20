@@ -1,7 +1,7 @@
-import Base
-import Creator
-import Game
-import Palette
+from Base import Base
+from Creator import Creator
+from Game import Game
+from Palette import Palette
 
 import os
 import pygame
