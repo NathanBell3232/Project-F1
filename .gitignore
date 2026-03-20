@@ -1,9 +1,6 @@
 .DS_Store
-\#*.py
+\#Old Files/
 Example.py
-mouse.png
-cat.png
-cheese.png
 colours.py
 *.pyc
 __pycache__/
@@ -13,4 +10,5 @@ car1.png
 car2.png
 carData.json
 
+tracks/track_images
 trackData.json
