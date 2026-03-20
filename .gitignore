@@ -8,5 +8,9 @@ colours.py
 *.pyc
 __pycache__/
 *.mdp
+
 car1.png
 car2.png
+carData.json
+
+trackData.json

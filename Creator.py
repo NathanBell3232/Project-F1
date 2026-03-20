@@ -192,7 +192,7 @@ class Creator(Base):
             except:
                 validName = True
 
-        pygame.image.save(sub, f"tracks/{self.__name}.png")
+        pygame.image.save(sub, f"tracks/track_images/{self.__name}.png")
         self.__saveData(coords)
 
     def errorMessage(self):

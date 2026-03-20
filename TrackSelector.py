@@ -10,7 +10,7 @@ import json
 class TrackSelector(Base):
     def __init__(self):
         super(TrackSelector, self).__init__()
-        self.__tracks = self.getPngList("tracks/")
+        self.__tracks = self.getPngList("tracks/track_images/")
         self.__buttonLeft = pygame.Rect(400, 675, 50, 50)
         self.__buttonRight = pygame.Rect(750, 675, 50, 50)
         self.__buttonDelete = pygame.Rect(1215, 500, 170, 50)
@@ -29,7 +29,7 @@ class TrackSelector(Base):
             #Tracks selector
             for index in range(self.__startTrack, self.__startTrack+6):
                 try:
-                    track = pygame.image.load("tracks/" + self.__tracks[index]).convert()
+                    track = pygame.image.load("tracks/track_images/" + self.__tracks[index]).convert()
                 except:
                     continue
                 track = pygame.transform.scale_by(track, 1/4)
@@ -45,7 +45,7 @@ class TrackSelector(Base):
                             self.__currentTrack = index
                         else:
                             Creator()
-                            self.__tracks = self.getPngList("tracks/")
+                            self.__tracks = self.getPngList("tracks/track_images/")
                 
                 if index == self.__currentTrack:
                     pygame.draw.rect(self.window, (0, 255, 0), [x, y, 300, 200], 4)
@@ -82,7 +82,7 @@ class TrackSelector(Base):
             textRender = self.fontBig.render("DELETE", True, (0,0,0))
             self.window.blit(textRender, textRender.get_rect(center=buttonDelete.center))
             if buttonDelete.collidepoint(self._mouse) and self.__currentTrack != -1 and self.click(0):
-                os.remove(os.path.join("tracks/", text))
+                os.remove(os.path.join("tracks/track_images", text))
                 
                 with open("tracks/trackData.json", "r") as infile:
                     file = json.load(infile)
@@ -91,7 +91,7 @@ class TrackSelector(Base):
                     json.dump(file, outFile, indent=1)
 
                 self.__currentTrack = -1
-                self.__tracks = self.getPngList("tracks/")
+                self.__tracks = self.getPngList("tracks/track_images")
 
             self.updateFrame(60)
 

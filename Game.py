@@ -11,7 +11,7 @@ class Game(Base):
     def __init__(self, player_number, path):
         super(Game, self).__init__()
         self.__playerNum = player_number
-        self.__track = pygame.image.load(f"tracks/{path}").convert()
+        self.__track = pygame.image.load(f"tracks/track_images/{path}").convert()
         self.__checkpoints, self.__finishLine, self.__flOrientation = self.extractCheckpoints(path[:-4])
         self.__carsList = []
         self.__paletteList = self.makePaletteList()
